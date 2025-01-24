@@ -1,0 +1,39 @@
+﻿@page "/"
+@inject LocalizationService LocalizationService
+
+<PageTitle>@LocalizationService.GetString("Home.PageTitle")</PageTitle>
+
+<br>
+<h1>@LocalizationService.GetString("Home.WelcomeMessage")</h1>
+<h2>@LocalizationService.GetString("Home.WelcomeAuthor")</h2>
+<h4>@((MarkupString)LocalizationService.GetString("Home.WelcomeContact"))</h4>
+<br>
+
+<p>@LocalizationService.GetString("Home.Description")</p>
+<p>@LocalizationService.GetString("Home.WorkInProgress")</p>
+<br>
+<p>@LocalizationService.GetString("Home.Features")</p>
+<ul>
+    @for (int i = 0; i <= 9; i++)
+    {
+        <li>@LocalizationService.GetString($"Home.FeatureList.{i}")</li>
+    }
+</ul>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await LocalizationService.LoadLocalizationStringsAsync();
+        LocalizationService.OnLanguageChanged += HandleLanguageChanged;
+    }
+
+    private void HandleLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LocalizationService.OnLanguageChanged -= HandleLanguageChanged;
+    }
+}

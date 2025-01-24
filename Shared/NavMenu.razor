@@ -1,0 +1,79 @@
+﻿@inject LocalizationService LocalizationService
+
+<div class="top-row navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-center">
+        <div class="navbar-brand-container">
+            <a class="navbar-brand" href="">EventEaseApp</a>
+        </div>
+        <div class="language-selector">
+            <select @onchange="ChangeLanguage" class="form-select">
+                <option value="en">English </option>
+                <option value="es">Español (Spanish)</option>
+                <option value="ur">اردو (Urdu)</option>
+                <option value="hi">हिन्दी (Hindi)</option>
+                <option value="ar">العربية (Arabic)</option>
+                <option value="zh">简体中文 (Simplified Chinese)</option>         
+            </select>
+        </div>
+    </div>
+</div>
+
+<div>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <i class="bi bi-house-door-fill"></i> @LocalizationService.GetString("NavBar.Home")
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link" href="events">
+                <i class="bi bi-envelope-fill"></i> @LocalizationService.GetString("NavBar.Events")
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink class="nav-link" href="nonexistentpagetest">
+                <i class="bi bi-exclamation-circle-fill"></i> @LocalizationService.GetString("NavBar.NonexistentPageTest")
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LocalizationService.LoadLocalizationStringsAsync();
+        LocalizationService.OnLanguageChanged += HandleLanguageChanged;
+        Console.WriteLine("Localization strings loaded");
+    }
+
+    private void HandleLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+        Console.WriteLine("Language changed");
+    }
+
+    public void Dispose()
+    {
+        LocalizationService.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    private async Task ChangeLanguage(ChangeEventArgs e)
+    {
+        var selectedLanguage = e.Value?.ToString();
+        if (!string.IsNullOrEmpty(selectedLanguage))
+        {
+            await LocalizationService.SetLanguageAsync(selectedLanguage);
+            StateHasChanged();
+            Console.WriteLine($"Language changed to {selectedLanguage}");
+        }
+    }
+}

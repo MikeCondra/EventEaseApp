@@ -1,0 +1,172 @@
+@page "/eventdetails/{id:int}"
+@using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventStateService EventStateService
+@inject NavigationManager Navigation
+@inject LocalizationService LocalizationService
+@inject EventService EventService
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Event? eventItem;
+    private bool isLoading = true;
+    private string errorMessage = "";
+    private bool showAttendeeForm = false;
+    private Attendee newAttendee = new Attendee();
+    private string attendeeErrorMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LocalizationService.LoadLocalizationStringsAsync();
+        LocalizationService.OnLanguageChanged += HandleLanguageChanged;
+        try
+        {
+            eventItem = EventStateService.GetEventById(Id);
+            if (eventItem == null)
+            {
+                errorMessage = "Event not found.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private void HandleLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LocalizationService.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    private async void DeleteAttendee(int attendeeId)
+    {
+        if (eventItem != null) {
+            var attendee = eventItem.Attendees.Find(a => a.Id == attendeeId);
+            if (attendee != null)
+            {
+                eventItem.Attendees.Remove(attendee);
+                await EventService.SaveEventsAsync(EventStateService.Events);
+            }
+        }
+    }
+
+    private void ShowAttendeeForm()
+    {
+        showAttendeeForm = true;
+        newAttendee = new Attendee();
+        attendeeErrorMessage = "";
+        StateHasChanged(); // Ensure the form re-renders
+    }
+
+    private void CloseAttendeeForm()
+    {
+        showAttendeeForm = false;
+        StateHasChanged(); // Ensure the form re-renders
+    }
+
+    private async Task AddAttendee()
+    {
+        if (eventItem != null)
+        {
+            string trimmedName = newAttendee.Name.Trim();
+            bool nameExists = eventItem.Attendees.Any(a => a.Name.Trim().Equals(trimmedName, StringComparison.OrdinalIgnoreCase));
+
+            if (nameExists)
+            {
+                attendeeErrorMessage = "An attendee with this name already exists.";
+                return;
+            }
+
+            newAttendee.Id = eventItem.Attendees.Count > 0 ? eventItem.Attendees[^1].Id + 1 : 1;
+            eventItem.Attendees.Add(newAttendee);
+            await EventService.SaveEventsAsync(EventStateService.Events);
+        }
+        showAttendeeForm = false;
+        StateHasChanged(); // Ensure the form re-renders
+    }
+}
+
+@if (isLoading)
+{
+    <p><em>@LocalizationService.GetString("EventList.Loading")</em></p>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p><em>Error: @errorMessage</em></p>
+}
+else if (eventItem == null)
+{
+    <p><em>Event not found.</em></p>
+}
+else
+{
+    <div>
+        <h3>@eventItem.Name</h3>
+        <p><strong>@LocalizationService.GetString("EventDetails.Location"):</strong> @eventItem.Location</p>
+        <p><strong>@LocalizationService.GetString("EventDetails.Date"):</strong> @eventItem.Date.ToShortDateString()</p>
+        <p><strong>@LocalizationService.GetString("EventDetails.Details"):</strong> @eventItem.Details</p>
+        <h4>@LocalizationService.GetString("EventDetails.Attendees")</h4>
+        @if (eventItem.Attendees.Count == 0)
+        {
+            <p>@LocalizationService.GetString("EventDetails.NoAttendees")</p>
+        }
+        else
+        {
+            <div class="attendee-list-container">
+                <Virtualize Items="eventItem.Attendees" Context="attendee">
+                    <div class="attendee-card">
+                        <p>@attendee.Name (@attendee.Email)</p>
+                        <button class="btn btn-danger btn-sm" @onclick="() => DeleteAttendee(attendee.Id)">@LocalizationService.GetString("EventList.Delete")</button>
+                    </div>
+                </Virtualize>
+            </div>
+        }
+        <button class="btn btn-secondary" @onclick="ShowAttendeeForm">@LocalizationService.GetString("EventDetails.AddAttendee")</button>
+        <button class="btn btn-secondary" @onclick='() => Navigation.NavigateTo("/events")'>@LocalizationService.GetString("EventDetails.BackToEvents")</button>
+    </div>
+}
+
+@if (showAttendeeForm)
+{
+    <div class="modal" style="display:block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@LocalizationService.GetString("EventDetails.AddAttendee")</h5>
+                    <button type="button" class="close" @onclick="CloseAttendeeForm">&times;</button>
+                </div>
+                <div class="modal-body">
+                    @if (!string.IsNullOrEmpty(attendeeErrorMessage))
+                    {
+                        <div class="alert alert-danger">@attendeeErrorMessage</div>
+                    }
+                    <EditForm Model="@newAttendee" OnValidSubmit="AddAttendee">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group">
+                            <label>@LocalizationService.GetString("EventDetails.Name"):</label>
+                            <InputText class="form-control" @bind-Value="newAttendee.Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>@LocalizationService.GetString("EventDetails.Email"):</label>
+                            <InputText class="form-control" @bind-Value="newAttendee.Email" />
+                        </div>
+                        <button class="btn btn-success" type="submit">@LocalizationService.GetString("EventList.Save")</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
