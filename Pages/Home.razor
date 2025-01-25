@@ -5,8 +5,8 @@
 
 <br>
 <h1>@LocalizationService.GetString("Home.WelcomeMessage")</h1>
-<h2>@LocalizationService.GetString("Home.WelcomeAuthor")</h2>
-<h4>@((MarkupString)LocalizationService.GetString("Home.WelcomeContact"))</h4>
+<h3>@LocalizationService.GetString("Home.WelcomeAuthor")</h3>
+<h5>@((MarkupString)LocalizationService.GetString("Home.WelcomeContact"))</h5>
 <br>
 
 <p>@LocalizationService.GetString("Home.Description")</p>
@@ -14,7 +14,7 @@
 <br>
 <p>@LocalizationService.GetString("Home.Features")</p>
 <ul>
-    @for (int i = 0; i <= 9; i++)
+    @for (int i = 0; i < 8; i++)
     {
         <li>@LocalizationService.GetString($"Home.FeatureList.{i}")</li>
     }

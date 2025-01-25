@@ -25,7 +25,7 @@ else
                     <button class="btn btn-primary btn-sm" @onclick="() => EditEvent(eventItem)">@LocalizationService.GetString("EventList.EditEvent")</button>
                     <button class="btn btn-danger btn-sm" @onclick="() => DeleteEvent(eventItem.Id)">@LocalizationService.GetString("EventList.Delete")</button>
                     <NavLink class="btn btn-info btn-sm" href="@($"eventdetails/{eventItem.Id}")">@LocalizationService.GetString("EventList.Details")</NavLink>
-                    <button class="btn btn-success btn-sm" @onclick="() => ShowAttendeeForm(eventItem)">@LocalizationService.GetString("EventList.IWantToAttend")</button>
+                    <button class="btn btn-success btn-sm" @onclick="() => ShowAttendeeForm(eventItem)">@LocalizationService.GetString("EventList.AddRegistration")</button>
                 </div>
             </div>
         </Virtualize>
@@ -55,7 +55,7 @@ else
     </div>
     <button class="btn btn-success" type="submit">@LocalizationService.GetString("EventList.Save")</button>
     <button class="btn btn-secondary" type="button" @onclick="CancelEdit">@LocalizationService.GetString("EventList.Cancel")</button>
-    <button class="btn btn-secondary" type="button" @onclick="SurpriseMe">@LocalizationService.GetString("EventList.SurpriseMe")</button>
+    <button class="btn btn-secondary" type="button" @onclick="BulkAddTestEvents">@LocalizationService.GetString("EventList.BulkAddTestEvents")</button>
 </EditForm>
 
 @if (showAttendeeForm)
@@ -64,7 +64,7 @@ else
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add Attendee</h5>
+                    <h5 class="modal-title">@LocalizationService.GetString("EventList.AddRegistration")</h5>
                     <button type="button" class="close" @onclick="CloseAttendeeForm">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -77,14 +77,14 @@ else
                         <ValidationSummary />
 
                         <div class="form-group">
-                            <label>Name:</label>
+                            <label>@LocalizationService.GetString("EventList.Name"):</label>
                             <InputText class="form-control" @bind-Value="newAttendee.Name" />
                         </div>
                         <div class="form-group">
-                            <label>Email:</label>
+                            <label>@LocalizationService.GetString("EventList.Email"):</label>
                             <InputText class="form-control" @bind-Value="newAttendee.Email" />
                         </div>
-                        <button class="btn btn-success" type="submit">Add</button>
+                        <button class="btn btn-success" type="submit">@LocalizationService.GetString("EventList.AddMe")</button>
                     </EditForm>
                 </div>
             </div>
@@ -174,7 +174,7 @@ else
         selectedEvent = null;
     }
 
-    private void SurpriseMe()
+    private void BulkAddTestEvents()
     {
         int startId = EventStateService.Events.Count > 0 ? EventStateService.Events[^1].Id + 1 : 1;
         for (int i = 0; i < 30; i++)
@@ -213,7 +213,7 @@ else
 
             if (nameExists)
             {
-                attendeeErrorMessage = "An attendee with this name already exists.";
+                attendeeErrorMessage = LocalizationService.GetString("EventDetails.RegistrantAlreadyExists");
                 return;
             }
 
