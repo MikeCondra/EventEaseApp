@@ -25,13 +25,13 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Debug --no-restore
 
     - name: Publish
-      run: dotnet publish --configuration Release
+      run: dotnet publish --configuration Debug
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./output/wwwroot
+        publish_dir: ./bin/Debug/net9.0/publish
