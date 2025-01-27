@@ -1,2 +1,0 @@
-C:\M\Proj\stage\EventEaseApp\bin\Debug\net9.0\publish\package-lock.json
-C:\M\Proj\stage\EventEaseApp\bin\Debug\net9.0\publish\web.config
