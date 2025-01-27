@@ -30,7 +30,7 @@ jobs:
       run: dotnet build --configuration Debug --no-restore
 
     - name: Publish
-      run: dotnet publish --configuration Debug --output ./publish/wwwroot
+      run: dotnet publish --configuration Debug
 
     - name: List publish directory contents
       run: ls -la ./publish/wwwroot
