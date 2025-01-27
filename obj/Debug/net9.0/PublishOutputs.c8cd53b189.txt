@@ -1,4 +1,0 @@
-/home/runner/work/EventEaseApp/EventEaseApp/publish/npm/package-lock.json
-/home/runner/work/EventEaseApp/EventEaseApp/publish/npm/package.json
-/home/runner/work/EventEaseApp/EventEaseApp/publish/package-lock.json
-/home/runner/work/EventEaseApp/EventEaseApp/publish/web.config

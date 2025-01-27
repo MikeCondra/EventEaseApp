@@ -1,4 +1,0 @@
-C:\P\EventEaseApp\bin\Release\net9.0\publish\npm\package-lock.json
-C:\P\EventEaseApp\bin\Release\net9.0\publish\npm\package.json
-C:\P\EventEaseApp\bin\Release\net9.0\publish\package-lock.json
-C:\P\EventEaseApp\bin\Release\net9.0\publish\web.config
