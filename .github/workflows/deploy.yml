@@ -32,7 +32,7 @@ jobs:
     - name: Publish
       run: dotnet publish --configuration Debug
 
-    - name: List publish directory contents
+    - name: List publish directory contents 
       run: ls -la ./publish/wwwroot
 
     - name: Deploy to GitHub Pages
