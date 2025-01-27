@@ -1,0 +1,53 @@
+{
+  "Home.PageTitle": "الصفحة الرئيسية",
+  "Home.WelcomeMessage": "مرحبًا بك في EventEaseApp!",
+  "Home.WelcomeAuthor": "بواسطة Michael Condra و GitHub Copilot",
+  "Home.WelcomeContact": "<a href='mailto:michael.condra@gmail.com'>michael.condra@gmail.com</a>, <a href='https://www.linkedin.com/in/michael-condra-a55725' target='_blank'>LinkedIn</a>",
+  "Home.Description": "EventEaseApp هو نموذج أولي لتطبيق ويب يدير الأحداث والمشاركين.",
+  "Home.WorkInProgress": "إنه عمل قيد التقدم، لذا ترقبوا. 😊",
+  "Home.Features": "الميزات:",
+  "Home.FeatureList.0": "عرض قائمة الأحداث",
+  "Home.FeatureList.1": "عرض تفاصيل الحدث والمشاركين",
+  "Home.FeatureList.2": "إنشاء/حذف حدث",
+  "Home.FeatureList.3": "التسجيل وإلغاء التسجيل لحضور حدث",
+  "Home.FeatureList.4": "عرض افتراضي للقوائم الطويلة",
+  "Home.FeatureList.5": "إضافة الأحداث بالجملة للاختبار",
+  "Home.FeatureList.7": "تشذيب المسافات البيضاء من إدخال المستخدم",
+  "Home.FeatureList.6": "توطين واجهة المستخدم. بما في ذلك أمثلة على اللغات التي تقرأ من اليسار إلى اليمين ومن اليمين إلى اليسار",
+  "Home.FeatureList.8": "...",
+  "Home.FeatureList.9": "...",
+  "EventDetails.Attendees": "المشاركون",
+  "EventDetails.NoAttendees": "لا يوجد مشاركون",
+  "EventDetails.BulkAddAttendees": "إضافة المشاركين بالجملة",
+  "EventDetails.BackToEvents": "العودة إلى الأحداث",
+  "EventDetails.Location": "الموقع",
+  "EventDetails.Date": "التاريخ",
+  "EventDetails.Details": "التفاصيل",
+  "EventDetails.AddAttendee": "إضافة مشارك",
+  "EventDetails.Name": "الاسم",
+  "EventDetails.Email": "البريد الإلكتروني",
+  "EventDetails.RegistrantAlreadyExists": "يوجد مشارك بهذا الاسم بالفعل",
+  "EventList.AddEvent": "إضافة حدث",
+  "EventList.EditEvent": "تحرير الحدث",
+  "EventList.Save": "حفظ",
+  "EventList.Cancel": "إلغاء",
+  "EventList.BulkAddTestEvents": "إضافة أحداث اختبار",
+  "EventList.AddRegistration": "إضافة تسجيل",
+  "EventList.AddTestRegistrations": "إضافة تسجيلات اختبار",
+  "EventList.Loading": "جار التحميل...",
+  "EventList.NoEvents": "لا توجد أحداث",
+  "EventList.Delete": "حذف الحدث",
+  "EventList.Details": "عرض تفاصيل الحدث",
+  "EventList.Name": "الاسم",
+  "EventList.Email": "البريد الإلكتروني",
+  "EventList.AddMe": "سجلني",
+  "EventList.Location": "الموقع",
+  "EventList.Date": "التاريخ",
+  "EventList.DetailsLabel": "التفاصيل",
+  "EventList.Attendees": "المشاركون",
+  "NonexistentPageTest.PageTitle": "الصفحة غير موجودة",
+  "NonexistentPageTest.Message": "عذرًا، الصفحة التي تبحث عنها غير موجودة. 😢",
+  "NavBar.Home": "الصفحة الرئيسية",
+  "NavBar.Events": "الأحداث",
+  "NavBar.NonexistentPageTest": "اختبار الصفحة غير الموجودة"
+}
