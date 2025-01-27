@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "Bluehill.Blazor.GHPages/1.0.2": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Bluehill.Blazor.GHPages.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Bluehill.Blazor.GHPages.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -2962,6 +2971,15 @@
       }
     },
     "net9.0/browser-wasm": {
+      "Bluehill.Blazor.GHPages/1.0.2": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Bluehill.Blazor.GHPages.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Bluehill.Blazor.GHPages.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.3.0": {
         "type": "package",
         "dependencies": {
@@ -5895,6 +5913,24 @@
     }
   },
   "libraries": {
+    "Bluehill.Blazor.GHPages/1.0.2": {
+      "sha512": "bTChJ7ylLxNuz5tdGloCPYnx6906FKax3ea1g7Ts5Ds0gkR/jtDe7XqM2KOX7/KsitLu+YxqKs5zvJrcCaWI2w==",
+      "type": "package",
+      "path": "bluehill.blazor.ghpages/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bluehill.blazor.ghpages.1.0.2.nupkg.sha512",
+        "bluehill.blazor.ghpages.nuspec",
+        "build/Bluehill.Blazor.GHPages.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Bluehill.Blazor.GHPages.props",
+        "buildTransitive/Bluehill.Blazor.GHPages.props",
+        "staticwebassets/404.html",
+        "staticwebassets/gh-pages.js"
+      ]
+    },
     "Microsoft.AspNetCore.Antiforgery/2.3.0": {
       "sha512": "C4o0buZnlzyhCpBny7//4Z9sKcxpVdFo0TRfE14q9Lac6+xkgwunPON+47FWzyqbUXu52SaABEoAiHC5lMam0A==",
       "type": "package",
@@ -11880,6 +11916,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Bluehill.Blazor.GHPages >= 1.0.2",
       "Microsoft.AspNetCore.Components.Authorization >= 9.0.1",
       "Microsoft.AspNetCore.Components.WebAssembly >= 9.0.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 9.0.1",
@@ -11938,6 +11975,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Bluehill.Blazor.GHPages": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          },
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
             "version": "[9.0.1, )"
