@@ -2780,8 +2780,8 @@ C:/P/EventEaseApp/obj/Debug/net9.0/ref/EventEaseApp.dll
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/icudt_EFIGS.tptq2av103.dat
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/icudt_no_CJK.lfu7j35m59.dat
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/blazor.boot.json
-/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.33n3w8ueoc.pdb
-/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.x94c1dae2o.wasm
+/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.4wqairuzyv.pdb
+/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.26ifgwbifn.wasm
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.AspNetCore.Antiforgery.6o6s7kl4ot.wasm
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.AspNetCore.Authentication.Abstractions.teru10q8m9.wasm
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.AspNetCore.Authentication.Core.m4evlbueww.wasm
@@ -3111,7 +3111,7 @@ C:/P/EventEaseApp/obj/Debug/net9.0/ref/EventEaseApp.dll
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/System.Text.Encoding.Extensions.nlydxjh19m.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.Extensions.Configuration.FileExtensions.omar8pgxm8.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/System.Security.Cryptography.Cng.tg2su1vayp.wasm.gz
-/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.33n3w8ueoc.pdb.gz
+/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.4wqairuzyv.pdb.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.JSInterop.gkumi7kxvo.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.Extensions.Localization.Abstractions.0orhvugfr1.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/System.Resources.Reader.09wnmnw7h6.wasm.gz
@@ -3235,7 +3235,7 @@ C:/P/EventEaseApp/obj/Debug/net9.0/ref/EventEaseApp.dll
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.AspNetCore.Authentication.Core.m4evlbueww.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.Extensions.Primitives.3pkwbmnqmy.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/Microsoft.AspNetCore.Mvc.ViewFeatures.6c28a70bdb.wasm.gz
-/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.x94c1dae2o.wasm.gz
+/home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/EventEaseApp.26ifgwbifn.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/System.Configuration.bcycfuj8pt.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/System.Reflection.TypeExtensions.elsa09wwcc.wasm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/bin/Debug/net9.0/wwwroot/_framework/WindowsBase.ovqw333kan.wasm.gz
@@ -3825,7 +3825,7 @@ C:/P/EventEaseApp/obj/Debug/net9.0/ref/EventEaseApp.dll
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/iivdunp698-eos3ticbv2.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/eotnszvkb1-tjbik9y19d.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/xxk2stfg1q-46ein0sx1k.gz
-/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/413vp4cml5-brq09x8xum.gz
+/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/413vp4cml5-blnoziw2ni.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/th6pzune3g-bqjiyaj88i.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/2l52lnvn0l-c2jlpeoesf.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/2xhm8ivb61-erw9l3u2r3.gz
@@ -4139,9 +4139,9 @@ C:/P/EventEaseApp/obj/Debug/net9.0/ref/EventEaseApp.dll
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/r489smiiq7-tjcz0u77k5.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/qvouh2q4mf-tptq2av103.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/hcxylcfklo-lfu7j35m59.gz
-/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/skwk8s9ui1-x94c1dae2o.gz
-/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/c1jhhq4o6d-33n3w8ueoc.gz
-/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/a1w0b3e4ey-mtqkgyr8ls.gz
+/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/skwk8s9ui1-26ifgwbifn.gz
+/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/c1jhhq4o6d-4wqairuzyv.gz
+/home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/compressed/a1w0b3e4ey-1q2qwnhoxm.gz
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/staticwebassets.build.json
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/staticwebassets.development.json
 /home/runner/work/EventEaseApp/EventEaseApp/obj/Debug/net9.0/staticwebassets.build.endpoints.json
