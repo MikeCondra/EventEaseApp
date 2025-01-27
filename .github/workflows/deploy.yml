@@ -30,15 +30,14 @@ jobs:
       run: dotnet build --configuration Debug --no-restore
 
     - name: Publish
-      run: dotnet publish --configuration Debug --output .
+      run: dotnet publish --configuration Debug --output ./publish
 
     - name: List publish directory contents
-      run: ls -la .
+      run: ls -la ./publish
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+        publish_dir: ./publish
         publish_branch: gh-pages
-        destination_dir: .
