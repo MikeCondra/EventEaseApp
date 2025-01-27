@@ -1,0 +1,1 @@
+C:\M\Proj\stage\EventEaseApp\bin\Release\net9.0\publish\web.config
