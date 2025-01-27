@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "EventEaseApp",
   "resources": {
-    "hash": "sha256-oMqD5AieRQWRlhx4BRPLQmOD+yvj/Gg+DbRnOImD120=",
+    "hash": "sha256-31RBABKVLtcG2gfUMeqwAc07OAZM2kIXUDc12liWVoA=",
     "fingerprinting": {
-      "EventEaseApp.ml09mp9dyv.wasm": "EventEaseApp.wasm",
+      "EventEaseApp.j4d8pqia9z.wasm": "EventEaseApp.wasm",
       "Microsoft.AspNetCore.Antiforgery.6o6s7kl4ot.wasm": "Microsoft.AspNetCore.Antiforgery.wasm",
       "Microsoft.AspNetCore.Authentication.Abstractions.teru10q8m9.wasm": "Microsoft.AspNetCore.Authentication.Abstractions.wasm",
       "Microsoft.AspNetCore.Authentication.Core.m4evlbueww.wasm": "Microsoft.AspNetCore.Authentication.Core.wasm",
@@ -184,7 +184,7 @@
       "System.Runtime.InteropServices.JavaScript.yvqs03l2tv.wasm": "sha256-HjOWaTszqCcd17bdjWVwIC9FDEjS6Kixt3UPpog0DtU="
     },
     "assembly": {
-      "EventEaseApp.ml09mp9dyv.wasm": "sha256-ShVjGQFXqDtVokRo2/eJnoh1ehCXPBJFXSuITaxBRec=",
+      "EventEaseApp.j4d8pqia9z.wasm": "sha256-c/VNqGeBTVIc12ESdAeRMmCWupmIMKzCthMcAVlAZlc=",
       "Microsoft.AspNetCore.Antiforgery.6o6s7kl4ot.wasm": "sha256-OmiSwEw6p2PxHao+FNLt+OxnIhBsNxGjvJJrG/Xwbek=",
       "Microsoft.AspNetCore.Authentication.Abstractions.teru10q8m9.wasm": "sha256-u9iMOIltdEH1f+auTSi7mcb4SBt2memdjfBRiDl2cNE=",
       "Microsoft.AspNetCore.Authentication.Core.m4evlbueww.wasm": "sha256-RvrgkuvCzUhIR14zDxsUqVpYzujZOdJHMJ36UJgBMIg=",
