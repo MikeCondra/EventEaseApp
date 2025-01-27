@@ -1,0 +1,226 @@
+@page "/events"
+@using EventEaseApp.Models
+@using EventEaseApp.Services
+@inject EventService EventService
+@inject EventStateService EventStateService
+@inject LocalizationService LocalizationService
+
+<h3>@(selectedEvent == null ? LocalizationService.GetString("EventList.AddEvent") : LocalizationService.GetString("EventList.EditEvent"))</h3>
+
+@if (EventStateService.Events == null)
+{
+    <p><em>@LocalizationService.GetString("EventList.Loading")</em></p>
+}
+else if (EventStateService.Events.Count == 0)
+{
+    <p><em>@LocalizationService.GetString("EventList.NoEvents")</em></p>
+}
+else
+{
+    <div class="event-list-container">
+        <Virtualize Items="EventStateService.Events" Context="eventItem">
+            <div class="event-card">
+                <p>@eventItem.Name - @eventItem.Location - @eventItem.Date.ToShortDateString()  --  @LocalizationService.GetString("EventList.Attendees"): @eventItem.Attendees.Count</p>
+                <div>
+                    <button class="btn btn-primary btn-sm" @onclick="() => EditEvent(eventItem)">@LocalizationService.GetString("EventList.EditEvent")</button>
+                    <button class="btn btn-danger btn-sm" @onclick="() => DeleteEvent(eventItem.Id)">@LocalizationService.GetString("EventList.Delete")</button>
+                    <NavLink class="btn btn-info btn-sm" href="@($"eventdetails/{eventItem.Id}")">@LocalizationService.GetString("EventList.Details")</NavLink>
+                    <button class="btn btn-success btn-sm" @onclick="() => ShowAttendeeForm(eventItem)">@LocalizationService.GetString("EventList.AddRegistration")</button>
+                </div>
+            </div>
+        </Virtualize>
+    </div>
+}
+
+<h3>@(selectedEvent == null ? LocalizationService.GetString("EventList.AddEvent") : LocalizationService.GetString("EventList.EditEvent"))</h3>
+<EditForm Model="@newEvent" OnValidSubmit="SaveEvent">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>@LocalizationService.GetString("EventList.Name"):</label>
+        <InputText class="form-control" @bind-Value="newEvent.Name" />
+    </div>
+    <div class="form-group">
+        <label>@LocalizationService.GetString("EventList.Location"):</label>
+        <InputText class="form-control" @bind-Value="newEvent.Location" />
+    </div>
+    <div class="form-group">
+        <label>@LocalizationService.GetString("EventList.Date"):</label>
+        <InputDate class="form-control" @bind-Value="newEvent.Date" />
+    </div>
+    <div class="form-group">
+        <label>@LocalizationService.GetString("EventList.DetailsLabel"):</label>
+        <InputTextArea class="form-control" @bind-Value="newEvent.Details" />
+    </div>
+    <button class="btn btn-success" type="submit">@LocalizationService.GetString("EventList.Save")</button>
+    <button class="btn btn-secondary" type="button" @onclick="CancelEdit">@LocalizationService.GetString("EventList.Cancel")</button>
+    <button class="btn btn-secondary" type="button" @onclick="BulkAddTestEvents">@LocalizationService.GetString("EventList.BulkAddTestEvents")</button>
+</EditForm>
+
+@if (showAttendeeForm)
+{
+    <div class="modal" style="display:block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@LocalizationService.GetString("EventList.AddRegistration")</h5>
+                    <button type="button" class="close" @onclick="CloseAttendeeForm">&times;</button>
+                </div>
+                <div class="modal-body">
+                    @if (!string.IsNullOrEmpty(attendeeErrorMessage))
+                    {
+                        <div class="alert alert-danger">@attendeeErrorMessage</div>
+                    }
+                    <EditForm Model="@newAttendee" OnValidSubmit="AddAttendee">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group">
+                            <label>@LocalizationService.GetString("EventList.Name"):</label>
+                            <InputText class="form-control" @bind-Value="newAttendee.Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>@LocalizationService.GetString("EventList.Email"):</label>
+                            <InputText class="form-control" @bind-Value="newAttendee.Email" />
+                        </div>
+                        <button class="btn btn-success" type="submit">@LocalizationService.GetString("EventList.AddMe")</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private Event newEvent = new Event();
+    private Event? selectedEvent;
+    private bool showAttendeeForm = false;
+    private Event? currentEvent;
+    private Attendee newAttendee = new Attendee();
+    private string attendeeErrorMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LocalizationService.LoadLocalizationStringsAsync();
+        LocalizationService.OnLanguageChanged += HandleLanguageChanged;
+        await EventStateService.LoadEventsAsync(EventService);
+    }
+
+    private void HandleLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LocalizationService.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    private async Task SaveEvent()
+    {
+        // Trim whitespace from event properties
+        newEvent.Name = newEvent.Name.Trim();
+        newEvent.Location = newEvent.Location.Trim();
+        newEvent.Details = newEvent.Details.Trim();
+
+        if (selectedEvent == null)
+        {
+            // Add new event
+            newEvent.Id = EventStateService.Events.Count > 0 ? EventStateService.Events[^1].Id + 1 : 1;
+            EventStateService.Events.Add(newEvent);
+        }
+        else
+        {
+            // Update existing event
+            var index = EventStateService.Events.FindIndex(e => e.Id == selectedEvent.Id);
+            if (index != -1)
+            {
+                EventStateService.Events[index] = newEvent;
+            }
+        }
+
+        await EventService.SaveEventsAsync(EventStateService.Events);
+        newEvent = new Event();
+        selectedEvent = null;
+    }
+
+    private void EditEvent(Event eventItem)
+    {
+        selectedEvent = eventItem;
+        newEvent = new Event
+        {
+            Id = eventItem.Id,
+            Name = eventItem.Name,
+            Location = eventItem.Location,
+            Date = eventItem.Date,
+            Details = eventItem.Details
+        };
+    }
+
+    private async Task DeleteEvent(int id)
+    {
+        var eventItem = EventStateService.Events.Find(e => e.Id == id);
+        if (eventItem != null)
+        {
+            EventStateService.Events.Remove(eventItem);
+            await EventService.SaveEventsAsync(EventStateService.Events);
+        }
+    }
+
+    private void CancelEdit()
+    {
+        newEvent = new Event();
+        selectedEvent = null;
+    }
+
+    private void BulkAddTestEvents()
+    {
+        int startId = EventStateService.Events.Count > 0 ? EventStateService.Events[^1].Id + 1 : 1;
+        for (int i = 0; i < 30; i++)
+        {
+            var newEvent = new Event
+            {
+                Id = startId + i,
+                Name = $"Surprise Event {i + 1}",
+                Location = $"Surprise Location {i + 1}",
+                Date = DateTime.Now.AddDays(i),
+                Details = $"Details for Surprise Event {i + 1}"
+            };
+            EventStateService.Events.Add(newEvent);
+        }
+    }
+
+    private void ShowAttendeeForm(Event eventItem)
+    {
+        currentEvent = eventItem;
+        newAttendee = new Attendee();
+        attendeeErrorMessage = "";
+        showAttendeeForm = true;
+    }
+
+    private void CloseAttendeeForm()
+    {
+        showAttendeeForm = false;
+    }
+
+    private async Task AddAttendee()
+    {
+        if (currentEvent != null)
+        {
+            string trimmedName = newAttendee.Name.Trim();
+            bool nameExists = currentEvent.Attendees.Any(a => a.Name.Trim().Equals(trimmedName, StringComparison.OrdinalIgnoreCase));
+
+            if (nameExists)
+            {
+                attendeeErrorMessage = LocalizationService.GetString("EventDetails.RegistrantAlreadyExists");
+                return;
+            }
+
+            newAttendee.Id = currentEvent.Attendees.Count > 0 ? currentEvent.Attendees[^1].Id + 1 : 1;
+            currentEvent.Attendees.Add(newAttendee);
+            await EventService.SaveEventsAsync(EventStateService.Events);
+        }
+        showAttendeeForm = false;
+    }
+}

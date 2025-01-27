@@ -1,0 +1,25 @@
+@page "/nonexistentpagetest"
+@inject LocalizationService LocalizationService
+
+<PageTitle>@LocalizationService.GetString("NonexistentPageTest.PageTitle")</PageTitle>
+
+<h1>@LocalizationService.GetString("NonexistentPageTest.PageTitle")</h1>
+<p>@LocalizationService.GetString("NonexistentPageTest.Message")</p>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await LocalizationService.LoadLocalizationStringsAsync();
+        LocalizationService.OnLanguageChanged += HandleLanguageChanged;
+    }
+
+    private void HandleLanguageChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    public void Dispose()
+    {
+        LocalizationService.OnLanguageChanged -= HandleLanguageChanged;
+    }
+}
