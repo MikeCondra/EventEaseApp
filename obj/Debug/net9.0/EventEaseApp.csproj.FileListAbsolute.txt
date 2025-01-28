@@ -1390,8 +1390,8 @@ C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.8o8n7iomrf.j
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.native.aep4lch3d1.wasm
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.rubq0v1yiy.js
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\dotnet.runtime.js.map
-C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.ac3dcitncn.pdb
-C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.o5ng6e2y6z.wasm
+C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.d2z2k3t84g.pdb
+C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.n4igtl2b0m.wasm
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
@@ -1724,7 +1724,7 @@ C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Drawing.5kh3shl062.
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Text.Encoding.Extensions.nlydxjh19m.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.Configuration.FileExtensions.omar8pgxm8.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Security.Cryptography.Cng.tg2su1vayp.wasm.gz
-C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.ac3dcitncn.pdb.gz
+C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.d2z2k3t84g.pdb.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.JSInterop.gkumi7kxvo.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.Localization.Abstractions.0orhvugfr1.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Resources.Reader.09wnmnw7h6.wasm.gz
@@ -1848,7 +1848,7 @@ C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Diagnostics.TraceSo
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Authentication.Core.m4evlbueww.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.Extensions.Primitives.3pkwbmnqmy.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Mvc.ViewFeatures.6c28a70bdb.wasm.gz
-C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.o5ng6e2y6z.wasm.gz
+C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\EventEaseApp.n4igtl2b0m.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Configuration.bcycfuj8pt.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Reflection.TypeExtensions.elsa09wwcc.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\WindowsBase.ovqw333kan.wasm.gz
@@ -1906,8 +1906,6 @@ C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\Microsoft.AspNetCore.Mvc.A
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Dynamic.Runtime.zwh4o2uogo.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Net.WebSockets.eth3pjb0i0.wasm.gz
 C:\P\EventEaseApp\bin\Debug\net9.0\wwwroot\_framework\System.Threading.Thread.i99sw2awmh.wasm.gz
-C:\P\EventEaseApp\bin\Debug\net9.0\npm\package-lock.json
-C:\P\EventEaseApp\bin\Debug\net9.0\npm\package.json
 C:\P\EventEaseApp\bin\Debug\net9.0\package-lock.json
 C:\P\EventEaseApp\bin\Debug\net9.0\package.json
 C:\P\EventEaseApp\bin\Debug\net9.0\EventEaseApp.staticwebassets.runtime.json
@@ -2752,9 +2750,9 @@ C:\P\EventEaseApp\obj\Debug\net9.0\compressed\9vf3knw6hc-tyz1a4w3vb.gz
 C:\P\EventEaseApp\obj\Debug\net9.0\compressed\r489smiiq7-tjcz0u77k5.gz
 C:\P\EventEaseApp\obj\Debug\net9.0\compressed\qvouh2q4mf-tptq2av103.gz
 C:\P\EventEaseApp\obj\Debug\net9.0\compressed\hcxylcfklo-lfu7j35m59.gz
-C:\P\EventEaseApp\obj\Debug\net9.0\compressed\skwk8s9ui1-o5ng6e2y6z.gz
-C:\P\EventEaseApp\obj\Debug\net9.0\compressed\c1jhhq4o6d-ac3dcitncn.gz
-C:\P\EventEaseApp\obj\Debug\net9.0\compressed\a1w0b3e4ey-asozk6skyw.gz
+C:\P\EventEaseApp\obj\Debug\net9.0\compressed\skwk8s9ui1-n4igtl2b0m.gz
+C:\P\EventEaseApp\obj\Debug\net9.0\compressed\c1jhhq4o6d-d2z2k3t84g.gz
+C:\P\EventEaseApp\obj\Debug\net9.0\compressed\a1w0b3e4ey-not1pjd90e.gz
 C:\P\EventEaseApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\P\EventEaseApp\obj\Debug\net9.0\staticwebassets.development.json
 C:\P\EventEaseApp\obj\Debug\net9.0\staticwebassets.build.endpoints.json

@@ -5,9 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EventEaseApp</title>
-    <base href="/EventEaseApp/" />
-    <script src="gh-pages.js"></script>
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        // Set the base URL dynamically based on the environment
+        var baseUrl = window.location.hostname === 'localhost' ? '/' : '/EventEaseApp/';
+        document.write('<base href="' + baseUrl + '" />');
+    </script>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
